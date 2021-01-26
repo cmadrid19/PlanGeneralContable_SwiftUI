@@ -13,6 +13,6 @@ Agrupa todas las cuentas con su definición y codificación.
   - Implement feateure: add user's custom note.
   
   ![Screenshot](https://github.com/cmadrid19/PlanGeneralContable_SwiftUI/blob/main/docs:images/Simulator%20Screen%20Shot%20-%20iPhone%2011%20-%202021-01-26%20at%2018.45.14.png)
-  ![Screenshot](Simulator Screen Shot - iPhone 11 - 2021-01-26 at 18.45.37.png)
-  ![Screenshot](Simulator Screen Shot - iPhone 11 - 2021-01-26 at 18.45.33.png)
+  ![Screenshot](https://github.com/cmadrid19/PlanGeneralContable_SwiftUI/blob/main/docs:images/Simulator%20Screen%20Shot%20-%20iPhone%2011%20-%202021-01-26%20at%2018.45.37.png)
+  ![Screenshot](https://github.com/cmadrid19/PlanGeneralContable_SwiftUI/blob/main/docs:images/Simulator%20Screen%20Shot%20-%20iPhone%2011%20-%202021-01-26%20at%2018.45.33.png)
   
