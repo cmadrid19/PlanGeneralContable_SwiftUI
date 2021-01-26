@@ -12,7 +12,7 @@ Agrupa todas las cuentas con su definición y codificación.
   - show groups and subgroups definitions
   - Implement feateure: add user's custom note.
   
-  ![Screenshot](Simulator Screen Shot - iPhone 11 - 2021-01-26 at 18.45.14.png)
+  ![Screenshot](docs/images/Screenshot1.png)
   ![Screenshot](Simulator Screen Shot - iPhone 11 - 2021-01-26 at 18.45.37.png)
   ![Screenshot](Simulator Screen Shot - iPhone 11 - 2021-01-26 at 18.45.33.png)
   
