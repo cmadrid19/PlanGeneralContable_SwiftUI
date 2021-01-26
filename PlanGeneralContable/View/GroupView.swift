@@ -38,7 +38,7 @@ struct GroupView: View {
                                             SubGroupView(subGroup: sg)
                                                 .cornerRadius(24)
                                         })
-                                        .navigationTitle(Text("Cuentas"))
+                                        .navigationTitle(Text("Grupos y subgrupos"))
                                         .navigationBarTitleDisplayMode(.inline)
                                 }
                             }
