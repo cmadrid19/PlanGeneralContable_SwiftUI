@@ -9,8 +9,8 @@ Agrupa todas las cuentas con su definición y codificación.
 
 #TODO:
   - Add examples to each account sign
-  - show groups and subgroups definitions
-  - Implement feateure: add user's custom note.
+  - show groups and subgroups definitions [DONE]
+  - Implement feature: add user's custom note.
   
   ![Screenshot](https://github.com/cmadrid19/PlanGeneralContable_SwiftUI/blob/main/docs::images/Screenshot1.png)
   ![Screenshot](https://github.com/cmadrid19/PlanGeneralContable_SwiftUI/blob/main/docs::images/Screenshot2.png)
