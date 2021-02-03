@@ -17,9 +17,7 @@ struct Home: View {
                 ScrollView(.vertical, showsIndicators: false) {
                     ForEach(data.grupos, id: \.self) { grupo in
                         
-                        
                         GroupView(grupo: grupo)
-                        
                         
                     }
                 }

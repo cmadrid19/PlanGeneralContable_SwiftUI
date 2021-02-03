@@ -53,7 +53,7 @@ struct SubGroupView: View {
             Spacer()
         }
         .frame(width: height, height: height)
-        .cornerRadius(16)
+        .cornerRadius(15)
         .shadow(color: Color.green.opacity(0.3), radius: 10, x: -2, y: 2)
     }
     
@@ -67,7 +67,6 @@ struct SubGroupView: View {
                 Color("Burnt_sienna")
                     .cornerRadius(15, corners: [.bottomRight, .bottomLeft])
                     .padding(.bottom, -20)
-                    .zIndex(-1000)
             }
         }
     }

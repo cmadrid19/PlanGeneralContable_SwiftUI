@@ -10,12 +10,42 @@ import SwiftUI
 struct ListCuentas: View {
     
     var subGrupo: SubGroup
+    @State private var totalHeight = CGFloat(100)
     
     var body: some View {
+        
         NavigationView{
-            ScrollView{
-                VStack() {
-                    Spacer()
+            ScrollView(showsIndicators: false) {
+                
+                GeometryReader { geo in
+                    if geo.frame(in: .global).minY > -totalHeight {
+                        VStack{
+                            
+                            Spacer(minLength: 40)
+                            
+                            Text("\(subGrupo.definicion?.removeNewLines ?? "")")
+                                .fontWeight(.semibold)
+                                .multilineTextAlignment(.center)
+                                .font(.callout)
+                                .fixedSize(horizontal: false, vertical: true)
+                                .padding([.horizontal, .top])
+                                .offset(y: -geo.frame(in: .global).minY)
+                                .frame(maxWidth: UIScreen.main.bounds.width, maxHeight: totalHeight)
+                        }
+                        .background(GeometryReader {gp -> Color in
+                            
+                            DispatchQueue.main.async {
+                                // update on next cycle with calculated height of ZStack !!!
+                                self.totalHeight = gp.size.height
+                            }
+                            return Color.clear
+                        })
+                    }
+                }
+                //default frame
+                .frame(height: totalHeight)
+                
+                VStack(spacing: 0){
                     
                     if let cuentas = subGrupo.cuentas {
                         ForEach(cuentas, id: \.self) { cuenta in
@@ -24,8 +54,15 @@ struct ListCuentas: View {
                             }
                         }
                     }
+                    
+                    Spacer(minLength: 40)
                 }
+                .background(Color("Burnt_sienna"))
+                .cornerRadius(15)
             }
+            
+            .navigationBarTitle(Text("\(subGrupo.nombre ?? "")"))
+            .navigationBarTitleDisplayMode(.inline)
             .navigationBarHidden(true)
         }
     }
@@ -43,12 +80,12 @@ struct ListCuentas: View {
                         Text("\(cuenta.codigo ?? "")")
                             .font(.callout)
                             .fontWeight(.semibold)
-                            .minimumScaleFactor(0.7)
+                        
                     }
-                    .padding()
-                    .frame(maxWidth: UIScreen.main.bounds.width * 0.2,maxHeight: .infinity, alignment: .leading)
+                    .frame(maxWidth: UIScreen.main.bounds.width * 0.2,maxHeight: .infinity, alignment: .center)
                     .background(Color("Persian_green"))
                     .cornerRadius(15)
+                    .padding([.leading, .top], tapped ? 8 : 0)
                     
                     VStack{
                         Text("\(cuenta.nombre ?? "")")
@@ -60,16 +97,17 @@ struct ListCuentas: View {
                     .padding()
                     .frame(maxHeight: .infinity,alignment: .leading)
                     
+                    
                 }
-                .frame(width: UIScreen.main.bounds.width,height: 90, alignment: .leading)
+                
+                .frame(maxWidth: .infinity, minHeight: 80, alignment: .leading)
                 .background(Color("Orange_yellow_crayola"))
                 .cornerRadius(15)
-                .padding(.horizontal,5)
-                .padding(.top, 5)
+                .padding(.top, tapped ? 0 : 8)
                 .fixedSize(horizontal: false, vertical: true)
                 .foregroundColor(.primary)
                 .onTapGesture(perform: {
-                    withAnimation(.easeInOut(duration: 0.5)) {
+                    withAnimation(.spring()) {
                         tapped.toggle()
                     }
                 })
@@ -129,18 +167,30 @@ struct ListCuentas: View {
                             
                         }
                         
+                        Spacer(minLength: 20)
                     }
                     .padding([.leading, .trailing, .bottom], 30)
                     .padding(.vertical, 10)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .foregroundColor(.primary)
-                    .background(Color("Orange_yellow_crayola").opacity(0.4))
-                    .padding(.bottom, -30)
+                    .background(Color("Orange_yellow_crayola"))
+                    .cornerRadius(15, corners: [.bottomRight, .bottomLeft])
                     .offset(y: -10)
                     .zIndex(-2)
+                    .onTapGesture {
+                        withAnimation(.spring()){
+                            self.tapped.toggle()
+                        }
+                        
+                    }
                     
+                    
+                    //Add corner radius at bottom
                 }
+                
+                Spacer(minLength: tapped ? 0 : 10)
             }
+            .padding([.horizontal],tapped == true ? 0 : 10)
         }
     }
 }
@@ -150,12 +200,4 @@ struct ListCuentas_Previews: PreviewProvider {
         ListCuentas(subGrupo: testSubGroup)
     }
 }
-
-
-
-
-
-
-
-
 

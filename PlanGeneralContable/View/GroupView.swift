@@ -8,6 +8,7 @@ struct GroupView: View {
     
     var grupo: Grupo
     let titleHoriMarginalSpace: CGFloat = 30
+    @State var showDefinition = false
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0){
@@ -17,15 +18,27 @@ struct GroupView: View {
                     Text("\(grupo.codigo)")
                         .font(.title2)
                         .fontWeight(.semibold)
-                        .minimumScaleFactor(0.7)
+                        .minimumScaleFactor(0.65)
                         .scaledToFit()
-                        
                     
                     Spacer(minLength: 0)
+                    
+                    Button(action: {
+                        withAnimation(Animation.spring()){
+                            self.showDefinition.toggle()
+                        }
+                    }, label: {
+                        Image(systemName: "rectangle.expand.vertical")
+                            .foregroundColor(self.showDefinition ? Color.blue : Color.primary)
+                            .padding(10)
+                            .background(Color("Orange_yellow_crayola").opacity(0.8))
+                            .cornerRadius(15)
+                            .shadow(color: Color("Orange_yellow_crayola").opacity(0.05), radius: 2, x: -2, y: 2)
+                            .shadow(color: Color("Orange_yellow_crayola").opacity(0.05), radius: 2, x: 2, y: -2)
+                    })
+                    
                 }
                 .padding(10)
-                
-                
                 
                 ScrollView(.horizontal, showsIndicators: false){
                     HStack(spacing: 10){
@@ -36,24 +49,41 @@ struct GroupView: View {
                                         destination: ListCuentas(subGrupo: sg),
                                         label: {
                                             SubGroupView(subGroup: sg)
-                                                .cornerRadius(24)
+                                            
                                         })
-                                        .navigationTitle(Text("Grupos y subgrupos"))
-                                        .navigationBarTitleDisplayMode(.inline)
                                 }
                             }
+                            
                         }
+                        .frame(maxHeight: UIScreen.main.bounds.height * 0.20)
                     }
-                    .padding(.vertical, 10)
                 }
-                .frame(minWidth: 0, maxWidth: .infinity, maxHeight: .infinity)
-                .padding(.horizontal, 10)
+                .frame(maxWidth: .infinity)
+                .padding(10)
                 
-
+                
+                if showDefinition {
+                    
+                    Text("\(grupo.definicion.removeNewLines)")
+                        .font(.body)
+                        .baselineOffset(3)
+                        .multilineTextAlignment(.leading)
+                        .lineLimit(nil)
+                        .padding(.horizontal)
+                        .padding(.bottom)
+                        .onTapGesture {
+                            withAnimation(.spring()){
+                                self.showDefinition.toggle()
+                            }
+                            
+                        }
+                    
+                }
+                
             }
-            .frame(maxWidth: .infinity, maxHeight: UIScreen.main.bounds.height * 0.3)
+            .frame(maxWidth: .infinity)
             .background(Color("Persian_green"))
-//            .clipShape(GroupShape(a: 30)) // current bug in iOS14, where scrollView doesnt show complety if its clipshped with a customShape.
+            //            .clipShape(GroupShape(a: 30)) // current bug in iOS14, where scrollView doesnt show complety if its clipshped with a customShape.
             .cornerRadius(16)
             .padding(.horizontal, 8)
         }
