@@ -18,7 +18,6 @@
 		9E1ABB6125BB28FB00DCF4F3 /* GroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1ABB6025BB28FB00DCF4F3 /* GroupView.swift */; };
 		9E1ABB6725BB3EA600DCF4F3 /* SubGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1ABB6625BB3EA600DCF4F3 /* SubGroupView.swift */; };
 		9E1ABB7425BB552F00DCF4F3 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1ABB7325BB552F00DCF4F3 /* Extensions.swift */; };
-		9ECEE7AA25BC68B800233161 /* CuentaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECEE7A925BC68B800233161 /* CuentaView.swift */; };
 		9ECEE7B525BF28F400233161 /* ListCuentas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECEE7B425BF28F400233161 /* ListCuentas.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,7 +35,6 @@
 		9E1ABB6025BB28FB00DCF4F3 /* GroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupView.swift; sourceTree = "<group>"; };
 		9E1ABB6625BB3EA600DCF4F3 /* SubGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubGroupView.swift; sourceTree = "<group>"; };
 		9E1ABB7325BB552F00DCF4F3 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		9ECEE7A925BC68B800233161 /* CuentaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuentaView.swift; sourceTree = "<group>"; };
 		9ECEE7B425BF28F400233161 /* ListCuentas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCuentas.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,7 +105,6 @@
 				9E1ABB4E25BB1A0300DCF4F3 /* Home.swift */,
 				9E1ABB6025BB28FB00DCF4F3 /* GroupView.swift */,
 				9E1ABB6625BB3EA600DCF4F3 /* SubGroupView.swift */,
-				9ECEE7A925BC68B800233161 /* CuentaView.swift */,
 				9ECEE7B425BF28F400233161 /* ListCuentas.swift */,
 			);
 			path = View;
@@ -202,7 +199,6 @@
 				9E1ABB4F25BB1A0300DCF4F3 /* Home.swift in Sources */,
 				9ECEE7B525BF28F400233161 /* ListCuentas.swift in Sources */,
 				9E1ABB5B25BB1D2400DCF4F3 /* ViewModelData.swift in Sources */,
-				9ECEE7AA25BC68B800233161 /* CuentaView.swift in Sources */,
 				9E1ABB7425BB552F00DCF4F3 /* Extensions.swift in Sources */,
 				9E1ABB6125BB28FB00DCF4F3 /* GroupView.swift in Sources */,
 				9E1ABB6725BB3EA600DCF4F3 /* SubGroupView.swift in Sources */,

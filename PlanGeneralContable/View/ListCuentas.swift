@@ -54,11 +54,10 @@ struct ListCuentas: View {
                             }
                         }
                     }
-                    
-                    Spacer(minLength: 40)
                 }
                 .background(Color("Burnt_sienna"))
-                .cornerRadius(15)
+                .cornerRadius(15, corners: [.topLeft, .topRight])
+                .ignoresSafeArea(.all, edges: .bottom)
             }
             
             .navigationBarTitle(Text("\(subGrupo.nombre ?? "")"))
@@ -184,8 +183,6 @@ struct ListCuentas: View {
                         
                     }
                     
-                    
-                    //Add corner radius at bottom
                 }
                 
                 Spacer(minLength: tapped ? 0 : 10)
